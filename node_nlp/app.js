@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var PORT = process.env.PORT || 3023;
 
 var indexRouter = require('./routes/index');
 //var nlpRouter = require('./routes/nlp');
@@ -19,5 +20,5 @@ const nlpRouter = require('./routes/nlp')
 app.use('/nlp',nlpRouter)
 //app.use('/api/nlp', nlpRouter);
 
-app.listen(3023,() => console.log('Server Started'))
+app.listen(PORT,() => console.log('Server Started'))
 module.exports = app;
